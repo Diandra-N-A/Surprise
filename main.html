@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Reva! 🌸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink-pastel: #FFD1DC;
+            --white-soft: #FFFFFF;
+            --text-color: #A67B84;
+            --accent-pink: #FF91A4;
+            --light-pink: #FFF0F3;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--white-soft);
+            color: var(--text-color);
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        #ascii-container {
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+            /* Ukuran font sangat krusial untuk HP agar tidak berantakan */
+            font-size: 1.8vw; 
+            line-height: 1.1;
+            color: var(--accent-pink);
+            margin-top: 30px;
+            min-height: 350px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            #ascii-container {
+                font-size: 7px; /* Paksa kecil di HP agar buket tidak pecah */
+                line-height: 1;
+            }
+        }
+
+        .content {
+            padding: 0 30px 50px 30px;
+            max-width: 500px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1.5s ease-out;
+        }
+
+        .content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-pink);
+        }
+
+        .message-box {
+            background-color: var(--light-pink);
+            padding: 25px;
+            border-radius: 25px;
+            border: 2px dashed var(--pink-pastel);
+            box-shadow: 0 10px 30px rgba(255, 145, 164, 0.1);
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        #surprise-btn {
+            margin-top: 30px;
+            padding: 15px 35px;
+            background-color: var(--accent-pink);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 5px 20px rgba(255, 145, 164, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        #surprise-btn:active {
+            transform: scale(0.9);
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 24px;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1000;
+            animation: moveUp 4s linear forwards;
+        }
+
+        @keyframes moveUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <script type="text/plain" id="ascii-source">
+
+                                    .f~\=_  .=/~~=\
+                                  ./!    _GKT     `;
+                                 r'     `b_/7V     t
+                                |     :~PYN8M 5=,  `;
+                                |      |t.rq=+V `\_=+\
+                               /V     |\`tjJ~~V  /    t
+                             .+  |    / ~~ /; !rZ'     t
+                           .='   b   |     |t.# |      `;
+                           |      t  /     `WW~;|       |
+                           .+_    `\ t      |f.D'       |
+                           t  \_, ._)(\   ./f_f'       _f
+                   .___    |    `~' `~*L j#m4W_,    _=~
+                  ./\  \\   |          ./ `   |`\\_+
+          .,     -7 `\, ~;  t        .//      Z\,
+        ./'~\\,   |   `\ \ __G=_  _/='      ./+_Jqf       __
+  .___,/'     ~\  t     ~\M   ~t~/ `\     j/V    '      // `~D;
+ r'  .dK8Gq    `L  D\_   `W /~~~+, :'D_ :#V`#         ./   :/'\
+ |   |KX@`||    t~=J; ~=_ K/      :L/  \/|//'       .=~\   /  d
+ | ./b+mf5!P;   |   V=,  VP~\   /m5\,   \t|'        |  @- .! -)
+!__K ~P K\~ `q  |   /\P\=@N=/; .! t \;  |V        _+;  |  | /~
+/' `qmb P|   `;.!  :' \, V!b`W,|  !,!!  |/       :' \  | .!K_,
+     |5Nb!   .!d_=/'  |`\ WV  ~Z5- t|qL b|      :'./q)Lb=~X/q\
+     |/,YL,  |Z'      | | PLt  | \,|(!M #     j++/'.//P|~~  |!
+      `+NmW@=7'     ./! |/ !W, /=_|K!  |Z         .K/|.!    `
+,      _Z|   `~~=qm_/       \t |:4V/;  W|        .5/.K/
+~\===_//.|       / `\        @,|/|4\| .#       __KK,||
+     qK+'P~\=\, _N_, T)-   ./4WM=4V`+,|W     m~\'\'(~N=\_
+         | |  `r~P\JX'    mLmKWb\V4~\ K|   .K'\'\'\'\LLLLXmL
+          \_G  `.('\~q     _M 5K|4V\'tN'   |'\'\\mf5~\'\'
+         ,  `' /t'\'\V   .(P; |t484'\VW    |\'mft'\'\'\f
+        .M,  ./\'\LmNP ./tZ\t  #'MV\'b#    |'K'\'\'\'m'
+        `t4=qKW+(~\'4V./\\t'4,.NbV4'q\f    dmL\'\'\L+'
+         `5q~\'\'\'\'Wt\'W'\'t|4G4V\@4    /M' ~++=f
+           \L'\'\'\'\!#!\|\'\Y/|M84Zb|   /t!
+             ~+\L=+=V\VN'b'\'\P5M#VW\!  /t!
+                    b'\5L!\'\'b'\WKPW  :tP
+                    !L'48\'\'4'\\5|b| .tP
+                     \\'tt\'mLqftVb# .(Z
+                   qXbLW5WL(~\'\'4|P K\'
+                     ~=tLGM!\'\'\VWVW\!
+                         `Pr+=+=~b#4\!
+                          \\    |'4V/
+                          !W,   P4V4
+                           |b  :t!m|b_
+                  ._=q~5~N=dV  WPqVbf\~M,
+              ./q~t'\'\'\'\~K|.P\!!8\'\'(t      ,
+             +*575~5+qtL'\'\VN:tP  #LL'\'\\,  .(|
+                `t\'\'\~5+L'4Zb\'  |W'5\qtLYm=(\!
+                  \\'\'\'\~q'b|P   b|\'\'\'5YqN/
+                   \L'\'\'\'t|4'   |b'\'\'\'\)!
+                     \tLLrfTfW7|  |\P\LL!\L=~
+                           /qV\|  |'|   `~
+                          :bP#'t  |q'
+                           |4~LV  dV
+                           b| |4  |4
+                          |Z  bV :tZ
+                          K!  |4 K'|
+                          *   NV:'q'
+                              !~/\P
+                                b\'
+                                t! 
+
+    </script>
+
+    <div id="ascii-container"></div>
+
+    <div class="content" id="main-content">
+        <h1>Happy 22nd, Cayang 🎂</h1>
+        <div class="message-box">
+            <p id="typed-text"></p>
+        </div>
+        <button id="surprise-btn" onclick="rainHearts()">Press Me</button>
+    </div>
+
+    <script>
+        const bouquet = document.getElementById('ascii-source').innerText;
+        
+        const message = "You’re officially 22 now! Still cute, still chaotic, still my favorite person (ever). Thanks for being my safe place and my daily dose of serotonin. Life’s way better with you in it. Love you always 💗";
+
+        const asciiElement = document.getElementById('ascii-container');
+        const textElement = document.getElementById('typed-text');
+        const contentDiv = document.getElementById('main-content');
+        const btn = document.getElementById('surprise-btn');
+
+        let i = 0;
+        let j = 0;
+
+        function typeAscii() {
+            if (i < bouquet.length) {
+                asciiElement.textContent += bouquet.charAt(i);
+                i++;
+                setTimeout(typeAscii, 3); 
+            } else {
+                contentDiv.classList.add('visible');
+                setTimeout(typeMessage, 1000);
+            }
+        }
+
+        function typeMessage() {
+            if (j < message.length) {
+                textElement.textContent += message.charAt(j);
+                j++;
+                setTimeout(typeMessage, 45);
+            } else {
+                btn.style.display = "inline-block";
+            }
+        }
+
+        function rainHearts() {
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart');
+                    const items = ['🌸', '💗', '🎀', '✨', '🌹', '🍭'];
+                    heart.innerHTML = items[Math.floor(Math.random() * items.length)];
+                    heart.style.left = Math.random() * 100 + "vw";
+                    heart.style.bottom = "-10vh";
+                    heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+                    document.body.appendChild(heart);
+
+                    setTimeout(() => heart.remove(), 4000);
+                }, i * 80);
+            }
+        }
+
+        window.onload = () => {
+            setTimeout(typeAscii, 500);
+        };
+    </script>
+</body>
+</html>
