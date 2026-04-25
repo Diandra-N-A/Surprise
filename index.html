@@ -29,28 +29,36 @@
             text-align: center;
         }
 
+        /* Container ASCII - Dibuat lebih tebal dan besar */
         #ascii-container {
             font-family: 'Courier New', Courier, monospace;
             white-space: pre;
-            /* Ukuran font sangat krusial untuk HP agar tidak berantakan */
-            font-size: 1.8vw; 
+            /* Menggunakan font-size yang lebih besar untuk mobile */
+            font-size: 10px; 
             line-height: 1.1;
             color: var(--accent-pink);
-            margin-top: 30px;
-            min-height: 350px;
-            font-weight: bold;
+            margin-top: 20px;
+            font-weight: 900; /* Membuat karakter ASCII jauh lebih tebal */
+            letter-spacing: 0.5px;
+            min-height: 300px;
+            display: inline-block;
+            text-align: left; /* ASCII art biasanya lebih rapi rata kiri */
         }
 
         @media (max-width: 600px) {
             #ascii-container {
-                font-size: 7px; /* Paksa kecil di HP agar buket tidak pecah */
-                line-height: 1;
+                /* Mengatur ukuran agar pas dengan lebar layar HP standar */
+                font-size: 2.2vw; 
+                line-height: 1.1;
+                font-weight: 900;
             }
+            h1 { font-size: 2.3rem !important; }
+            .message-box { padding: 15px !important; }
         }
 
         .content {
-            padding: 0 30px 50px 30px;
-            max-width: 500px;
+            padding: 0 20px 40px 20px;
+            max-width: 90%;
             opacity: 0;
             transform: translateY(20px);
             transition: all 1.5s ease-out;
@@ -63,29 +71,29 @@
 
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
             color: var(--accent-pink);
         }
 
         .message-box {
             background-color: var(--light-pink);
-            padding: 25px;
-            border-radius: 25px;
-            border: 2px dashed var(--pink-pastel);
-            box-shadow: 0 10px 30px rgba(255, 145, 164, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid var(--pink-pastel);
+            box-shadow: 0 5px 15px rgba(255, 145, 164, 0.05);
         }
 
         p {
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 0.95rem;
+            line-height: 1.6;
             font-weight: 500;
             margin: 0;
         }
 
         #surprise-btn {
-            margin-top: 30px;
-            padding: 15px 35px;
+            margin-top: 25px;
+            padding: 12px 30px;
             background-color: var(--accent-pink);
             border: none;
             border-radius: 50px;
@@ -94,12 +102,7 @@
             font-weight: bold;
             cursor: pointer;
             display: none;
-            box-shadow: 0 5px 20px rgba(255, 145, 164, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        #surprise-btn:active {
-            transform: scale(0.9);
+            box-shadow: 0 4px 15px rgba(255, 145, 164, 0.3);
         }
 
         .heart {
@@ -120,8 +123,7 @@
 <body>
 
     <script type="text/plain" id="ascii-source">
-
-                                    .f~\=_  .=/~~=\
+                                   .f~\=_  .=/~~=\
                                   ./!    _GKT     `;
                                  r'     `b_/7V     t
                                 |     :~PYN8M 5=,  `;
@@ -181,8 +183,7 @@
                           *   NV:'q'
                               !~/\P
                                 b\'
-                                t! 
-
+                                t!
     </script>
 
     <div id="ascii-container"></div>
@@ -192,12 +193,11 @@
         <div class="message-box">
             <p id="typed-text"></p>
         </div>
-        <button id="surprise-btn" onclick="rainHearts()">Press Me</button>
+        <button id="surprise-btn" onclick="rainHearts()">Press Me 💗</button>
     </div>
 
     <script>
         const bouquet = document.getElementById('ascii-source').innerText;
-        
         const message = "You’re officially 22 now! Still cute, still chaotic, still my favorite person (ever). Thanks for being my safe place and my daily dose of serotonin. Life’s way better with you in it. Love you always 💗";
 
         const asciiElement = document.getElementById('ascii-container');
@@ -212,10 +212,10 @@
             if (i < bouquet.length) {
                 asciiElement.textContent += bouquet.charAt(i);
                 i++;
-                setTimeout(typeAscii, 3); 
+                setTimeout(typeAscii, 2); 
             } else {
                 contentDiv.classList.add('visible');
-                setTimeout(typeMessage, 1000);
+                setTimeout(typeMessage, 800);
             }
         }
 
@@ -223,26 +223,25 @@
             if (j < message.length) {
                 textElement.textContent += message.charAt(j);
                 j++;
-                setTimeout(typeMessage, 45);
+                setTimeout(typeMessage, 35);
             } else {
                 btn.style.display = "inline-block";
             }
         }
 
         function rainHearts() {
-            for (let i = 0; i < 40; i++) {
+            for (let k = 0; k < 30; k++) {
                 setTimeout(() => {
                     const heart = document.createElement('div');
                     heart.classList.add('heart');
-                    const items = ['🌸', '💗', '🎀', '✨', '🌹', '🍭'];
+                    const items = ['🌸', '💗', '✨', '🌹'];
                     heart.innerHTML = items[Math.floor(Math.random() * items.length)];
                     heart.style.left = Math.random() * 100 + "vw";
                     heart.style.bottom = "-10vh";
-                    heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+                    heart.style.fontSize = (Math.random() * 15 + 20) + "px";
                     document.body.appendChild(heart);
-
                     setTimeout(() => heart.remove(), 4000);
-                }, i * 80);
+                }, k * 100);
             }
         }
 
