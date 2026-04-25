@@ -29,36 +29,27 @@
             text-align: center;
         }
 
-        /* Container ASCII - Dibuat lebih tebal dan besar */
+        /* ASCII Container - Ukuran dijaga sesuai keinginanmu */
         #ascii-container {
             font-family: 'Courier New', Courier, monospace;
             white-space: pre;
-            /* Menggunakan font-size yang lebih besar untuk mobile */
-            font-size: 10px; 
+            font-size: 2.2vw; 
             line-height: 1.1;
             color: var(--accent-pink);
             margin-top: 20px;
-            font-weight: 900; /* Membuat karakter ASCII jauh lebih tebal */
-            letter-spacing: 0.5px;
+            font-weight: bold;
             min-height: 300px;
-            display: inline-block;
-            text-align: left; /* ASCII art biasanya lebih rapi rata kiri */
         }
 
         @media (max-width: 600px) {
             #ascii-container {
-                /* Mengatur ukuran agar pas dengan lebar layar HP standar */
-                font-size: 2.2vw; 
-                line-height: 1.1;
-                font-weight: 900;
+                font-size: 8px; /* Tetap kecil sesuai screenshot terakhir */
             }
-            h1 { font-size: 2.3rem !important; }
-            .message-box { padding: 15px !important; }
         }
 
         .content {
-            padding: 0 20px 40px 20px;
-            max-width: 90%;
+            padding: 0 25px 60px 25px;
+            max-width: 500px;
             opacity: 0;
             transform: translateY(20px);
             transition: all 1.5s ease-out;
@@ -69,40 +60,49 @@
             transform: translateY(0);
         }
 
+        /* Judul diperbesar */
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 2.8rem;
-            margin-bottom: 10px;
+            font-size: 3.2rem; 
+            margin-bottom: 20px;
             color: var(--accent-pink);
         }
 
+        /* Message Box dengan Padding Luas & Dashed Border */
         .message-box {
             background-color: var(--light-pink);
-            padding: 20px;
-            border-radius: 20px;
-            border: 1px solid var(--pink-pastel);
-            box-shadow: 0 5px 15px rgba(255, 145, 164, 0.05);
+            padding: 35px 25px; 
+            border-radius: 30px;
+            border: 2px dashed var(--pink-pastel);
+            box-shadow: 0 10px 30px rgba(255, 145, 164, 0.1);
         }
 
+        /* Teks Pesan diperbesar */
         p {
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 1.2rem;
+            line-height: 1.8;
             font-weight: 500;
             margin: 0;
         }
 
+        /* Tombol diperbesar */
         #surprise-btn {
-            margin-top: 25px;
-            padding: 12px 30px;
+            margin-top: 35px;
+            padding: 18px 45px;
             background-color: var(--accent-pink);
             border: none;
             border-radius: 50px;
             color: white;
-            font-size: 1rem;
+            font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
             display: none;
-            box-shadow: 0 4px 15px rgba(255, 145, 164, 0.3);
+            box-shadow: 0 5px 20px rgba(255, 145, 164, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        #surprise-btn:active {
+            transform: scale(0.95);
         }
 
         .heart {
@@ -123,7 +123,7 @@
 <body>
 
     <script type="text/plain" id="ascii-source">
-                                   .f~\=_  .=/~~=\
+.f~\=_  .=/~~=\
                                   ./!    _GKT     `;
                                  r'     `b_/7V     t
                                 |     :~PYN8M 5=,  `;
@@ -223,25 +223,25 @@
             if (j < message.length) {
                 textElement.textContent += message.charAt(j);
                 j++;
-                setTimeout(typeMessage, 35);
+                setTimeout(typeMessage, 40);
             } else {
                 btn.style.display = "inline-block";
             }
         }
 
         function rainHearts() {
-            for (let k = 0; k < 30; k++) {
+            for (let k = 0; k < 40; k++) {
                 setTimeout(() => {
                     const heart = document.createElement('div');
                     heart.classList.add('heart');
-                    const items = ['🌸', '💗', '✨', '🌹'];
+                    const items = ['🌸', '💗', '✨', '🌹', '🎀'];
                     heart.innerHTML = items[Math.floor(Math.random() * items.length)];
                     heart.style.left = Math.random() * 100 + "vw";
                     heart.style.bottom = "-10vh";
-                    heart.style.fontSize = (Math.random() * 15 + 20) + "px";
+                    heart.style.fontSize = (Math.random() * 15 + 25) + "px";
                     document.body.appendChild(heart);
                     setTimeout(() => heart.remove(), 4000);
-                }, k * 100);
+                }, k * 80);
             }
         }
 
